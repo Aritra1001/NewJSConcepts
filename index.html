@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Topics Revision</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Learning some concepts</h1>
-    <h2>What is Function Currying?</h2>
-    <p>
-      Function Currying is a javascript mechanism in which a function having
-      multiple arguments is transformed into a series of nested functions each
-      having a single argument.
-    </p>
-    <p>Normally we write:</p>
-    <pre>
+    <div class="container">
+      <h1>Learning some concepts</h1>
+      <h2>What is Function Currying?</h2>
+      <p>
+        Function Currying is a javascript mechanism in which a function having
+        multiple arguments is transformed into a series of nested functions each
+        having a single argument.
+      </p>
+      <p>Normally we write:</p>
+      <pre>
         function addition(a,b,c){
             return a + b + c;
         }
         let res = addition(2,3,4);
         console.log(res);
-    </pre>
-    <p>Using function currying</p>
-    <pre>
+    </pre
+      >
+      <p>Using function currying</p>
+      <pre>
         function addition(a){
             return function(b){
                 return function(c){
@@ -34,15 +37,16 @@
         
         let res = addition(2)(3)(4);
         console.log(res);        
-    </pre>
+    </pre
+      >
 
-    <h2>What is function generator?</h2>
-    <p>
-      A generator function is used to generate value and it returns a generator
-      object. The yield keyword used within the generator function is used to
-      pause and resume the execution of code.
-    </p>
-    <pre>
+      <h2>What is function generator?</h2>
+      <p>
+        A generator function is used to generate value and it returns a
+        generator object. The yield keyword used within the generator function
+        is used to pause and resume the execution of code.
+      </p>
+      <pre>
         function* simpleGenerator(){
             console.log("generator function");
             yield 20;
@@ -55,120 +59,119 @@
         console.log(sg.next());
         console.log(sg.next());
         console.log(sg.next());
-    </pre>
+    </pre
+      >
 
-    <h2>What is nullish coalescing operator?</h2>
-    <p>
-      This operator is used to check only undefined or null value. It won't
-      check boolean or empty string. The nullish-coalescing operator is a
-      logical operator that return its right hand side operand when its left
-      side operand is either null or undefined, otherwise returns its left hand
-      side operand.
-    </p>
+      <h2>What is nullish coalescing operator?</h2>
+      <p>
+        This operator is used to check only undefined or null value. It won't
+        check boolean or empty string. The nullish-coalescing operator is a
+        logical operator that return its right hand side operand when its left
+        side operand is either null or undefined, otherwise returns its left
+        hand side operand.
+      </p>
 
-    <pre>
+      <pre>
         let user={
             name: "",
             age: 0
         }
         console.log(user.name ?? "unknown"); 
         console.log(user.age ?? 21);
-    </pre>
-
-    <h2>What is bubbling?</h2>
-    <p>
-      Bubbling is a concept of DOM( Document Object Model). In bubbling, the
-      event is first captured by the innermost element and then propagated to
-      outer elements.
-    </p>
-    <p>
-      Click on inner div to see event bubbling. Here on clicking on the inner
-      div all the onClicks are fired due to event bubbling.
-    </p>
-    <div
-      class="topDiv"
-      style="background-color: red; padding: 10px"
-      onclick="topDiv()"
-    >
-      Top div
-      <div
-        class="middleDiv"
-        style="background-color: green; padding: 10px"
-        onclick="middleDiv()"
+    </pre
       >
-        Middle div
+
+      <h2>What is bubbling?</h2>
+      <p>
+        Bubbling is a concept of DOM( Document Object Model). In bubbling, the
+        event is first captured by the innermost element and then propagated to
+        outer elements.
+      </p>
+      <p>
+        Click on inner div to see event bubbling. Here on clicking on the inner
+        div all the onClicks are fired due to event bubbling.
+      </p>
+      <div
+        class="topDiv"
+        style="background-color: red; padding: 10px"
+        onclick="topDiv()"
+      >
+        Top div
         <div
-          class="innerDiv"
-          style="background-color: blue; padding: 10px"
-          onclick="innerDiv()"
+          class="middleDiv"
+          style="background-color: green; padding: 10px"
+          onclick="middleDiv()"
         >
-          Inner div
+          Middle div
+          <div
+            class="innerDiv"
+            style="background-color: blue; padding: 10px"
+            onclick="innerDiv()"
+          >
+            Inner div
+          </div>
         </div>
       </div>
-    </div>
 
-    <h2>What is stop propagation?</h2>
-    <p>
-      Stop propagation method in DOM is used to prevent an event from bubbling
-      or propagating up the DOM tree.
-    </p>
-    <p>
-      Here on clicking the inner div it will not fire all the on clicks due to
-      stop propagation method.
-    </p>
-    <div
-      class="topDiv1"
-      style="background-color: red; padding: 10px"
-      onclick="topDiv1(event)"
-    >
-      Top div1
+      <h2>What is stop propagation?</h2>
+      <p>
+        Stop propagation method in DOM is used to prevent an event from bubbling
+        or propagating up the DOM tree.
+      </p>
+      <p>
+        Here on clicking the inner div it will not fire all the on clicks due to
+        stop propagation method.
+      </p>
       <div
-        class="middleDiv1"
-        style="background-color: green; padding: 10px"
-        onclick="middleDiv1(event)"
+        class="topDiv1"
+        style="background-color: red; padding: 10px"
+        onclick="topDiv1(event)"
       >
-        Middle div1
+        Top div1
         <div
-          class="innerDiv1"
-          style="background-color: blue; padding: 10px"
-          onclick="innerDiv1(event)"
+          class="middleDiv1"
+          style="background-color: green; padding: 10px"
+          onclick="middleDiv1(event)"
         >
-          Inner div1
+          Middle div1
+          <div
+            class="innerDiv1"
+            style="background-color: blue; padding: 10px"
+            onclick="innerDiv1(event)"
+          >
+            Inner div1
+          </div>
         </div>
       </div>
-    </div>
 
-    <h2>What is local storage and session storage?</h2>
-    <p>
-      Local storage - Local storage is the property in javascript that allows
-      javascript site or apps to save key-value pairs on the browser without any
-      expiration date. The data can be retrieved even after the user closes the
-      browser or restarts the computer.
-    </p>
-    <p>
-      Session storage - Session storage is a popular choice for storing data in
-      the browser. The data will be stored for a particular session only. The
-      data is cleared once the user closes the browser window.
-    </p>
+      <h2>What is local storage and session storage?</h2>
+      <p>
+        Local storage - Local storage is the property in javascript that allows
+        javascript site or apps to save key-value pairs on the browser without
+        any expiration date. The data can be retrieved even after the user
+        closes the browser or restarts the computer.
+      </p>
+      <p>
+        Session storage - Session storage is a popular choice for storing data
+        in the browser. The data will be stored for a particular session only.
+        The data is cleared once the user closes the browser window.
+      </p>
 
-    <h2>Fetching data from an api and rendering it on table.</h2>
-    <h4>Rendering id and username in table.</h4>
-    <table border="1px">
+      <h2>Fetching data from an api and rendering it on table and list.</h2>
+      <h4>Rendering id and username in table.</h4>
+      <table border="1px">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>username</th>
-            </tr>
+          <tr>
+            <th>ID</th>
+            <th>username</th>
+          </tr>
         </thead>
-        <tbody id="table-body">
+        <tbody id="table-body"></tbody>
+      </table>
 
-        </tbody>
-    </table>
-
-    <h4>Rendering id and username in list.</h4>
-    <ul id="list-data">
-        
-    </ul>
+      <h4>Rendering id and username in list.</h4>
+      <ul id="list-data"></ul>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
