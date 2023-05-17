@@ -78,3 +78,37 @@ function innerDiv1(){
     event.stopPropagation();
     alert("Inner Div1 clicked");
 }
+
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response)=>{
+    // console.log(response);
+    return response.json();
+})
+.then((data)=>{
+    console.log(data);
+    let tableData = "";
+    data.map((items)=>{
+        tableData += `<tr>
+            <td>${items.id}</td>
+            <td>${items.name}</td>
+        </tr>`
+    })
+    document.getElementById('table-body').innerHTML = tableData;
+})
+
+
+fetch("https://jsonplaceholder.typicode.com/users")
+.then((response)=>{
+    return response.json();
+})
+.then((data)=>{
+    console.log(data);
+    let listData = "";
+    data.map((items)=>{
+        listData += `<li>id : ${items.id} </li>
+        <li>username : ${items.name}</li>
+        `
+    });
+    document.getElementById('list-data').innerHTML = listData;
+})
